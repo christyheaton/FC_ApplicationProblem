@@ -4,21 +4,18 @@ orig_str = r'cwrxwzbgickpjbp_svnudntddwdqbfgzyiqpuxddmpvyfquosmicfzkjekxzchngpqa
 to_sort = 'abcdefghijklmnopqrstuvwxyz_'
 
 d = {}
-
 for l in orig_str:
     if l in d:
         d[l] = d[l] + 1
     else:
         d[l] = 1
 
-sorted_by_inst = sorted(d, key=d.get)
+sorted_by_inst = sorted(d, key=d.get, reverse=True)
 
 init_result = ''
-
 for i in sorted_by_inst:
     if i in to_sort:
         init_result = init_result + i
 
 result = init_result.split('_')[0]
-
 print(result)
