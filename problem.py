@@ -11,4 +11,14 @@ for l in orig_str:
     else:
         d[l] = 1
 
-print(d)
+sorted_by_inst = sorted(d, key=d.get)
+
+init_result = ''
+
+for i in sorted_by_inst:
+    if i in to_sort:
+        init_result = init_result + i
+
+result = init_result.split('_')[0]
+
+print(result)
